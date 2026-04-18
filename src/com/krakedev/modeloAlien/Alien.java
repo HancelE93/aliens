@@ -66,7 +66,7 @@ public class Alien {
 
 		mensaje = "Tamaño: " + tamanio + " ,Color:  " + color 
 				+ " ,Numero de ojos: " + numeroOjos + " ,Numero de brazos: " 
-				+ numeroBrazos + " ,Numero de pies" + numeroPies + " ,Precio de extremidades: " 
+				+ numeroBrazos + " ,Numero de pies: " + numeroPies + " ,Precio de extremidades: " 
 				+ precioExtremidad + ". Precio de ojos: " + precioOjo 
 				+ " , Precio de curepo: " + precioCuerpo;
 		System.out.println(mensaje);
