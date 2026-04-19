@@ -33,4 +33,10 @@ public class TestJunit {
 	        assertEquals(1.0, alien.getPrecioExtremidad(), 0.001);
 	        assertEquals(0.5, alien.getPrecioOjo(), 0.001);
 	    }
+	    @Test
+	    public void testTamanioMaximo() {
+	        Alien alien = new Alien(50, "Amarillo");
+
+	        assertEquals(30, alien.getTamanio());
+	    }
 }
