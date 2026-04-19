@@ -64,12 +64,38 @@ public class Alien {
 	public void imprimir() {
 		String mensaje;
 
-		mensaje = "Tamaño: " + tamanio + " ,Color:  " + color 
-				+ " ,Numero de ojos: " + numeroOjos + " ,Numero de brazos: " 
-				+ numeroBrazos + " ,Numero de pies: " + numeroPies + " ,Precio de extremidades: " 
-				+ precioExtremidad + ". Precio de ojos: " + precioOjo 
+		mensaje = "Tamaño: " + tamanio + " ,Color:  " + color + " ,Numero de ojos: " + numeroOjos
+				+ " ,Numero de brazos: " + numeroBrazos + " ,Numero de pies: " + numeroPies
+				+ " ,Precio de extremidades: " + precioExtremidad + ". Precio de ojos: " + precioOjo
 				+ " , Precio de curepo: " + precioCuerpo;
 		System.out.println(mensaje);
 
 	}
+
+	public boolean agregarBrazos(double cantidad) {
+
+		int totalExtremidades = this.numeroBrazos + this.numeroPies;
+
+		if (totalExtremidades + cantidad <= 10) {
+			this.numeroBrazos += cantidad;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean agregarPiernas(double cantidad) {
+
+		int totalExtremidades = this.numeroBrazos + this.numeroPies;
+
+		if (totalExtremidades + cantidad <= 10) {
+			this.numeroPies += cantidad;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	
+
 }

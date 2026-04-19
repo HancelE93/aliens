@@ -12,7 +12,7 @@ public class TestConstrucores {
 		System.out.println("--------------------");
 		
 		Alien aliens2 = new Alien (30,"Rojo");
-		aliens.imprimir();
+		aliens2.imprimir();
 	}
 
 }
