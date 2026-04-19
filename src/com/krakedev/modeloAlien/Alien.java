@@ -10,6 +10,7 @@ public class Alien {
 	private double precioExtremidad;
 	private double precioOjo;
 	private double precioCuerpo;
+	private double precioTotal;
 
 	public Alien(int tamanio, String color) {
 		// 🔹 Validación de tamaño
@@ -27,6 +28,11 @@ public class Alien {
 		this.precioCuerpo = this.tamanio * 0.20;
 		this.precioExtremidad = this.tamanio * 0.10;
 		this.precioOjo = this.tamanio * 0.05;
+		this.precioTotal = 0;
+	}
+
+	public double getPrecioTotal() {
+		return precioTotal;
 	}
 
 	public int getTamanio() {
@@ -74,10 +80,11 @@ public class Alien {
 
 	public boolean agregarBrazos(double cantidad) {
 
-		int totalExtremidades = this.numeroBrazos + this.numeroPies;
+		int totalExtremidades = numeroBrazos + numeroPies;
 
 		if (totalExtremidades + cantidad <= 10) {
-			this.numeroBrazos += cantidad;
+			numeroBrazos += cantidad;
+			calcularPrecioTotal();
 			return true;
 		} else {
 			return false;
@@ -86,10 +93,11 @@ public class Alien {
 
 	public boolean agregarPiernas(double cantidad) {
 
-		int totalExtremidades = this.numeroBrazos + this.numeroPies;
+		int totalExtremidades = numeroBrazos + numeroPies;
 
 		if (totalExtremidades + cantidad <= 10) {
-			this.numeroPies += cantidad;
+			numeroPies += cantidad;
+			calcularPrecioTotal();
 			return true;
 		} else {
 			return false;
@@ -110,10 +118,17 @@ public class Alien {
 
 		if (numeroOjos + cantidad <= maxOjos) {
 			numeroOjos += cantidad;
+			calcularPrecioTotal();
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public void calcularPrecioTotal() {
+		int extremidades = numeroBrazos + numeroPies;
+		precioTotal = precioCuerpo + (extremidades * precioExtremidad) + (numeroOjos * precioOjo) ;
+		
 	}
 
 }
